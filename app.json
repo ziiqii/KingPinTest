@@ -31,6 +31,12 @@
         "projectId": "03644de1-faa0-49f5-b132-549685218cde"
       }
     },
-    "owner": "ziiqii"
+    "owner": "ziiqii",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/03644de1-faa0-49f5-b132-549685218cde"
+    }
   }
 }
