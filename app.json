@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "KingPinTest",
-    "slug": "kingpintest",
+    "slug": "KingPinTest",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,12 +25,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "03644de1-faa0-49f5-b132-549685218cde"
-      }
-    },
-    "owner": "ziiqii"
+    }
   }
 }
