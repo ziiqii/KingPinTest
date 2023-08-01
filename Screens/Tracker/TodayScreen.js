@@ -20,11 +20,11 @@ import {
   orderBy,
 } from "firebase/firestore";
 import OSSPie from "../../Components/Analytics/OSSPie";
-// import ScoreLineChart from "../../Components/Analytics/ScoreLineChart";
-// import StrikeAndSpareLineChart from "../../Components/Analytics/StrikeAndSpareLineChart";
-// import FirstShotLineChart from "../../Components/Analytics/FirstShotLineChart";
-// import transformArray1dp from "../../Functions/transformArray1dp";
-// import transformArray from "../../Functions/transformArray";
+import ScoreLineChart from "../../Components/Analytics/ScoreLineChart";
+import StrikeAndSpareLineChart from "../../Components/Analytics/StrikeAndSpareLineChart";
+import FirstShotLineChart from "../../Components/Analytics/FirstShotLineChart";
+import transformArray1dp from "../../Functions/transformArray1dp";
+import transformArray from "../../Functions/transformArray";
 
 // stats:
 
