@@ -1,5 +1,11 @@
 import React from "react";
-import { Text, View, Image, TextInput, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import { useState } from "react";
 import styles from "./SignupScreen.style";
 import FormInput from "../../Components/Inputs/FormInput";
@@ -13,6 +19,15 @@ const SignupScreen = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState();
 
   const handleSignUp = () => {
+    // Check if password and confirm password match
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      // Clear the password fields
+      setPassword("");
+      setConfirmPassword("");
+      return;
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         // Signed in
@@ -23,40 +38,42 @@ const SignupScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Create an account</Text>
-      <FormInput
-        labelValue={email}
-        onChangeText={(userEmail) => setEmail(userEmail)}
-        placeholderText="Email"
-        iconType="user"
-        keyboardType="email-address"
-        autoCapitalize="none"
-        autoCorrect={false}
-      />
-      <FormInput
-        labelValue={password}
-        onChangeText={(userPassword) => setPassword(userPassword)}
-        placeholderText="Password"
-        iconType="lock"
-        secureTextEntry={true}
-      />
-      <FormInput
-        labelValue={confirmPassword}
-        onChangeText={(userPassword) => setConfirmPassword(userPassword)}
-        placeholderText="Confirm Password"
-        iconType="lock"
-        secureTextEntry={true}
-      />
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <Text style={styles.text}>Create an account</Text>
+        <FormInput
+          labelValue={email}
+          onChangeText={(userEmail) => setEmail(userEmail)}
+          placeholderText="Email"
+          iconType="user"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+        <FormInput
+          labelValue={password}
+          onChangeText={(userPassword) => setPassword(userPassword)}
+          placeholderText="Password"
+          iconType="lock"
+          secureTextEntry={true}
+        />
+        <FormInput
+          labelValue={confirmPassword}
+          onChangeText={(userPassword) => setConfirmPassword(userPassword)}
+          placeholderText="Confirm Password"
+          iconType="lock"
+          secureTextEntry={true}
+        />
 
-      <FormButton buttonTitle={"Sign Up"} onPress={handleSignUp}></FormButton>
-      <TouchableOpacity
-        style={styles.navButton}
-        onPress={() => navigation.navigate("LoginScreen")}
-      >
-        <Text style={styles.navButtonText}>Have an account? Log in</Text>
-      </TouchableOpacity>
-    </View>
+        <FormButton buttonTitle={"Sign Up"} onPress={handleSignUp}></FormButton>
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => navigation.navigate("LoginScreen")}
+        >
+          <Text style={styles.navButtonText}>Have an account? Log in</Text>
+        </TouchableOpacity>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
