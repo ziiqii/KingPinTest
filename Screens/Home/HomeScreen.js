@@ -2,8 +2,8 @@ import { useEffect, Text, View } from "react";
 import { getAuth } from "firebase/auth";
 import { db } from "../../firebase";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-// import ScreenStack from "../../Navigators/ScreenStack";
-import BlankScreen from "../BlankScreen";
+import ScreenStack from "../../Navigators/ScreenStack";
+// import BlankScreen from "../BlankScreen";
 
 const HomeScreen = () => {
   const auth = getAuth();
@@ -38,7 +38,7 @@ const HomeScreen = () => {
     }
   };
 
-  return <BlankScreen />;
+  return <ScreenStack />;
 };
 
 export default HomeScreen;

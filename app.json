@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "KingPinTest",
-    "slug": "kingpintest",
+    "slug": "kingpin",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,15 +28,15 @@
     },
     "extra": {
       "eas": {
-        "projectId": "03644de1-faa0-49f5-b132-549685218cde"
+        "projectId": "a8a8d5fd-6961-4d54-b3d5-051e71f2936d"
       }
     },
-    "owner": "ziiqii",
+    "owner": "kingpinorbital",
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/03644de1-faa0-49f5-b132-549685218cde"
+      "url": "https://u.expo.dev/a8a8d5fd-6961-4d54-b3d5-051e71f2936d"
     }
   }
 }
